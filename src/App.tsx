@@ -11,7 +11,7 @@ function App() {
 
 	useEffect(() => {
 		client.models.Todo.observeQuery().subscribe({
-		next: (data) => setTodos([...data.items]),
+			next: (data) => setTodos([...data.items]),
 		});
 	}, []);
 
@@ -32,20 +32,26 @@ function App() {
 				<button onClick={createTodo}>+ new</button>
 				<ul>
 					{todos.map((todo) => (
-					<li
-					onClick={() => deleteTodo(todo.id)}
-					key={todo.id}>{todo.content}</li>
+						<div
+                        className="div_todo"
+                        key={todo.id}
+						>
+							<li>{todo.content}</li>
+
+							<button
+							className="button_delete"
+							onClick={() => deleteTodo(todo.id)}
+							>
+								Delete
+							</button>
+						</div>
 					))}
 				</ul>
-				<div>
-					🥳 App successfully hosted. Try creating a new todo.
-					<br />
-				</div>
 				<button onClick={signOut}>Sign out</button>
 			</main>
 		)}
-	  </Authenticator>
-  );
+	</Authenticator>
+	);
 }
 
 export default App;
