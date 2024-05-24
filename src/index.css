@@ -45,14 +45,17 @@ ul {
   margin: 8px 0;
   border: 1px solid black;
   gap: 1px;
-  background-color: black;
+  background-color: transparent;
   border-radius: 8px;
+  border: 1px solid transparent; 
   overflow: auto;
 }
 
 li {
   background-color: white;
   padding: 8px;
+  flex: 1;
+  border-radius: 8px;
 }
 
 li:hover {
@@ -62,4 +65,21 @@ li:hover {
 a {
   font-weight: 800;
   text-decoration: none;
+}
+
+.button_delete {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+.div_todo {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: transparent;
 }
